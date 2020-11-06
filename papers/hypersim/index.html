@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+    <head>
+        <title>Hypersim: A Photorealistic Synthetic Dataset for Holistic Indoor Scene Understanding</title>
+        <meta http-equiv='Content-Style-Type' content='text/css'/>
+        <meta name='robots' content='index,follow'/>
+        <link rel='stylesheet' href='style.css' type='text/css'/>
+    </head>
+    <body>
+
+<!-- 
+        <a href="https://github.com/mikeroberts3000/AWorkEfficientGpuAlgorithmForLevelSetSegmentation/"><img style="position: relative; float: right; top: -1em; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
+ -->
+
+        <div id='page'>            
+            <div id='content'>
+
+                <table class='heading' style='width: 100% !important'>
+                    <tr>
+                        <td>
+                            <p class='bigtext'>
+                                <strong>Hypersim: A Photorealistic Synthetic Dataset for Holistic Indoor Scene Understanding</strong>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+
+                <table class='heading' style='width: 30% !important'>
+                    <tr>
+
+                        <td>
+                            <p>
+                                <a href='http://mikeroberts3000.github.io'>Mike Roberts</a>
+                            </p>
+                        </td>
+
+                        <td>
+                            <p>
+                                Nathan Paczan
+                            </p>
+                        </td>
+
+                    </tr>
+                </table>
+
+                <table class='heading'>
+                    <tr>
+
+                        <td>
+                            <p>
+                                Apple
+                            </p>
+                        </td>
+                        
+                    </tr>
+                </table>
+
+                <table class='heading'>
+                    <tr>
+                        <td>
+                            <p>
+                                <em>arXiv</em>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+
+                <table class='figure'>
+                    <tr>
+                        <td>
+                            <img width='100%' src='images/teaser_web.jpg' alt='' title='' />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>
+                                <strong>Figure 1:</strong> Overview of the Hypersim dataset. For each color image (a), Hypersim includes the following ground truth layers: depth (b); surface normals (c); instance-level semantic segmentations (d,e); diffuse reflectance (f); diffuse illumination (g); and a non-diffuse residual image that captures view-dependent lighting effects like glossy surfaces and specular highlights (h). Our diffuse reflectance, diffuse illumination, and non-diffuse residual layers are stored as HDR images, and can be composited together to exactly reconstruct the color image. Our dataset also includes complete scene geometry, material information, and lighting information for every scene.
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+
+                <table class='figure'>
+                    <tr>
+                        <td>
+                            <img width='100%' src='images/bounding_box_12.jpg' alt='' title='' />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>
+                                <strong>Figure 2:</strong> We include a tight 9-DOF bounding box for each semantic instance, so that our dataset can be applied directly to 3D object detection problems (e.g., <a href='http://rgbd.cs.princeton.edu'>SUN RGB-D</a>).
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+
+                <table class='figure'>
+                    <tr>
+                        <td>
+                            <img width='100%' src='images/random_images_34_web.jpg' alt='' title='' />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>
+                                <strong>Figure 3:</strong> Randomly selected images from our dataset. From these images, we see that the scenes in our dataset are diverse.
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+
+                <table class='figure'>
+                    <tr>
+                        <td>
+                            <img width='100%' src='images/tool_1_22_web.jpg' alt='' title='' />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>
+                                <strong>Figure 4:</strong> Our interactive mesh annotation tool. Our tool has a semantic instance view (a,b,c) and a semantic label view (d,e), as well as a set of selection filters that can be used to limit the extent of editing operations based on the current state of the mesh. To see how these filters can be useful, consider the following scenario. The table in this scene is composed of multiple object parts, but initially, these object parts have not been grouped into a semantic instance (a). Our filters enable the user to paint the entire table by drawing a single rectangle, without disturbing the walls, floor, or other objects (b,c). Once the table has been grouped into an instance, the user can then apply a semantic label with a single button click (d,e). Parts of the mesh that have not been painted in either view are colored white (e.g., the leftmost chair). Parts of the mesh that have not been painted in the current view, but have been painted in the other view, are colored dark grey, (e.g., the table in (d)). Our tool enables the user to accurately annotate an input mesh with very rough painting gestures.
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+
+                <table class='figure'>
+                    <tr>
+                        <td>
+                            <img width='100%' src='images/comparison_web.jpg' alt='' title='' />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>
+                                <strong>Table 1:</strong> Comparison to previous datasets and simulators for indoor scene understanding. We limit our comparisons to synthetic datasets and simulators that aim to be photorealistic. The "3D meshes" column indicates whether or not 3D assets (e.g., triangle meshes) are publicly available. The "HDR images" column indicates whether or not images are available in an unclamped HDR format. The "Segmentation" column indicates what type of segmentation information is available. The "Intrinsic" column indicates how images are factored into disentangled lighting and shading components. Our dataset is the first to include 3D assets, HDR images, semantic instance segmentations, and a disentangled image representation.
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+
+                <table class='heading'>
+                    <tr>
+                        <td>
+                            <p>
+                                <strong><a href='http://arxiv.org'>arXiv</a></strong> | <strong>Code</strong> (coming soon...) | <strong>Data</strong> (coming soon...)
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+
+                <p>
+                    <strong>Abstract:</strong> For many fundamental scene understanding tasks, it is difficult or impossible to obtain per-pixel ground truth labels from real images. We address this challenge by introducing Hypersim, a photorealistic synthetic dataset for holistic indoor scene understanding. To create our dataset, we leverage a large repository of synthetic scenes created by professional artists, and we generate 77,400 images of 461 indoor scenes with detailed per-pixel labels and corresponding ground truth geometry. Our dataset: (1) relies exclusively on publicly available 3D assets; (2) includes complete scene geometry, material information, and lighting information for every scene; (3) includes dense per-pixel semantic instance segmentations for every image; and (4) factors every image into diffuse reflectance, diffuse illumination, and a non-diffuse residual term that captures view-dependent lighting effects. Together, these features make our dataset well-suited for geometric learning problems that require direct 3D supervision, multi-task learning problems that require reasoning jointly over multiple input and output modalities, and inverse rendering problems. We analyze our dataset at the level of scenes, objects, and pixels, and we analyze costs in terms of money, annotation effort, and computation time. Remarkably, we find that it is possible to generate our entire dataset from scratch, for roughly half the cost of training a state-of-the-art natural language processing model. All the code we used to generate our dataset will be made available online.
+                </p>
+
+<!-- 
+                <table class='figure'>
+                    <tr>
+                        <td>
+                            <iframe width="720" height="400" src="https://www.youtube.com/embed/89fFmfVZSO8" frameborder="0" allowfullscreen></iframe>
+                        </td>
+                    </tr>
+                </table>
+ -->
+
+<pre id='citation'>@misc{roberts:2020,
+    author       = {Mike Roberts AND Nathan Paczan},
+    title        = {{Hypersim}: {A} Photorealistic Synthetic Dataset for Holistic Indoor Scene Understanding},
+    howpublished = {arXiv 2020},
+}</pre>
+
+                <p class='newsection'>
+                    <strong>Acknowledgements:</strong> We thank the professional artists at Evermotion for making their Archinteriors Collection available for purchase; Danny Nahmias for helping us to acquire data; Max Horton for helping us to prototype our annotation tool; Momchil Lukanov and Vlado Koylazov at Chaos Group for their excellent support with V-Ray; David Antler, Hanlin Goh, and Brady Quist for proofreading the paper; and Ali Farhadi, Zhile Ren, Fred Schaffalitzky, Qi Shan, Josh Susskind, and Russ Webb for the helpful discussions.
+                </p>
+
+            </div>
+        </div>
+    </body>
+</html>
