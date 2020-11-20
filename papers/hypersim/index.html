@@ -84,13 +84,13 @@
                 <table class='figure'>
                     <tr>
                         <td>
-                            <img width='100%' src='images/bounding_box_12.jpg' alt='' title='' />
+                            <img width='100%' src='images/pipeline_web.jpg' alt='' title='' />
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <p>
-                                <strong>Figure 2:</strong> We include a tight 9-DOF bounding box for each semantic instance, so that our dataset can be applied directly to 3D object detection problems.
+                                <strong>Figure 2:</strong> Overview of our computational pipeline. In this simplified diagram, our pipeline takes as input a triangle mesh, an artist-defined camera pose, and a V-Ray scene description file, and produces as output a collection of images with ground truth labels and corresponding geometry. The main steps of our pipeline are as follows. We estimate the free space in our scene, use this estimate to generate a collision-free camera trajectory, modify our V-Ray scene to include the trajectory, and invoke our cloud rendering system to render images. In parallel with the rest of our pipeline, we annotate the scene’s triangle mesh using our interactive tool. In a post-processing step, we propagate mesh annotations to our rendered images (not shown). This pipeline design enables us to render images before mesh annotation is complete, and also enables us to re-annotate our scenes (e.g., with a different set of labels) without needing to re-render images.
                             </p>
                         </td>
                     </tr>
@@ -105,7 +105,8 @@
                     <tr>
                         <td>
                             <p>
-                                <strong>Figure 3:</strong> Randomly selected images from our dataset. From these images, we see that the scenes in our dataset are diverse.
+                                <strong>Figure 3:</strong> Randomly selected images from our dataset. From these images, we see that the scenes in our dataset are diverse, and our view
+sampling heuristic generates informative views without requiring our scenes to be semantically labeled.
                             </p>
                         </td>
                     </tr>
@@ -121,6 +122,21 @@
                         <td>
                             <p>
                                 <strong>Figure 4:</strong> Our interactive mesh annotation tool. Our tool has a semantic instance view (a,b,c) and a semantic label view (d,e), as well as a set of selection filters that can be used to limit the extent of editing operations based on the current state of the mesh. To see how these filters can be useful, consider the following scenario. The table in this scene is composed of multiple object parts, but initially, these object parts have not been grouped into a semantic instance (a). Our filters enable the user to paint the entire table by drawing a single rectangle, without disturbing the walls, floor, or other objects (b,c). Once the table has been grouped into an instance, the user can then apply a semantic label with a single button click (d,e). Parts of the mesh that have not been painted in either view are colored white (e.g., the leftmost chair). Parts of the mesh that have not been painted in the current view, but have been painted in the other view, are colored dark grey, (e.g., the table in (d)). Our tool enables the user to accurately annotate an input mesh with very rough painting gestures.
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+
+                <table class='figure'>
+                    <tr>
+                        <td>
+                            <img width='100%' src='images/bounding_box_12_web.jpg' alt='' title='' />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>
+                                <strong>Figure 5:</strong> We include a tight 9-DOF bounding box for each semantic instance, so that our dataset can be applied directly to 3D object detection problems.
                             </p>
                         </td>
                     </tr>
