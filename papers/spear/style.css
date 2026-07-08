@@ -51,9 +51,9 @@ a:hover {
 }
 
 #content table td {
-    padding-right: 6px;  
-    padding-top: 6px;  
-    padding-left: 6px;  
+    padding-right: 6px;
+    padding-top: 6px;
+    padding-left: 6px;
     padding-bottom: 6px;
     vertical-align: middle;
 }
@@ -63,7 +63,7 @@ a:hover {
 }
 
 #biopiccolumn {
-    width: 38% !important;
+    width: 40% !important;
 }
 
 #citation {
@@ -92,25 +92,6 @@ a:hover {
 .thumbnailcolumn {
     width: 18% !important;
     text-align: center !important;
-}
-
-.softwaretitle {
-    margin-top: 0;
-    margin-bottom: 4px;
-}
-
-.softwaretitlespaced {
-    margin-top: 20px;
-    margin-bottom: 4px;
-}
-
-.softwareimage {
-    margin-top: 4px;
-    margin-bottom: 0;
-}
-
-.softwareabstract {
-    margin-top: 4px;
 }
 
 .logoleftcolumn {

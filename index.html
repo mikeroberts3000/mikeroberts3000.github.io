@@ -32,8 +32,8 @@
                             <p class='bigtext'>
                                 
                                 <strong>Mike Roberts</strong><br/>
-                                Research Scientist<br/>
-                                <a href='https://www.intel.com/content/www/us/en/research/overview.html'>Intel Labs</a><br/>
+                                Senior Research Scientist<br/>
+                                <a href='http://research.adobe.com'>Adobe Research</a><br/>
                                 <br/>
 
                                 <span class='contactbutton'>
@@ -67,9 +67,10 @@
                 </p>
 
                 <p>
-                    I'm a research scientist in the <a href='http://vladlen.info/lab'>Intelligent Systems Lab</a> at <a href='http://www.intel.com'>Intel</a>, where I work with <a href='http://vladlen.info'>Vladlen Koltun</a>.
-                    I'm interested in using photorealistic synthetic data for computer vision.
-                    Previously, I was a research scientist at <a href='http://www.apple.com'>Apple</a>, where I led the development of the <a href='papers/hypersim'>Hypersim</a> dataset.
+                    I'm a senior research scientist at <a href='http://research.adobe.com'>Adobe Research</a>, where I lead the development of the <a href='papers/spear'>SPEAR</a> simulator.
+                    I'm interested in using photorealistic synthetic data for embodied AI and computer vision.
+                    Before joining Adobe Research, I was a research scientist in the <a href='http://vladlen.info/lab'>Intelligent Systems Lab</a> at <a href='http://www.intel.com'>Intel</a>.
+                    Before joining Intel, I was a research scientist at <a href='http://www.apple.com'>Apple</a>, where I led the development of the <a href='papers/hypersim'>Hypersim</a> dataset.
                 </p>
 
                 <p>
@@ -82,6 +83,10 @@
 
                 <p>
                     For an overview of my dissertation work, see this <a href='http://www.youtube.com/watch?v=iU0GTwjbAxA'>talk</a> from TEDxBerkeley 2017.
+                </p>
+
+                <p>
+                    <strong>Prospective interns:</strong> If you're interested in interning with me, please email me with a link to your website and a short description of what you'd like to work on.
                 </p>
 
                 <hr>
@@ -97,7 +102,37 @@
                 <table>
 
                     <tr class='thumbnailrow'>
-                        <td class='thumbnailcolumn'> 
+                        <td class='thumbnailcolumn'>
+                            <div>
+                                <a href='papers/spear'><img width='200px' src='images/paper_2026_eccv.jpg' alt='' title=''/></a>
+                            </div>
+                        </td>
+                        <td>
+                            <p>
+                                <strong><a href='papers/spear'>SPEAR: A Simulator for Photorealistic Embodied AI Research</a></strong><br/>
+                                <strong>Mike Roberts</strong>, Renhan Wang, Rushikesh Zawar, Rachith Dey-Prakash, Quentin Leboutet, Stephan R. Richter, Matthias M&uuml;ller, German Ros, Rui Tang, Stefan Leutenegger, Yannick Hold-Geoffroy, Kalyan Sunkavalli, Vladlen Koltun<br/>
+                                <em>European Conference on Computer Vision (ECCV) 2026</em>
+                            </p>
+                        </td>
+                    </tr>
+
+                    <tr class='thumbnailrow'>
+                        <td class='thumbnailcolumn'>
+                            <div>
+                                <a href='http://vision-x-nyu.github.io/pisa-experiments.github.io'><img width='200px' src='images/paper_2025_icml.jpg' alt='' title=''/></a>
+                            </div>
+                        </td>
+                        <td>
+                            <p>
+                                <strong><a href='http://vision-x-nyu.github.io/pisa-experiments.github.io'>PISA Experiments: Exploring Physics Post-Training for Video Diffusion Models by Watching Stuff Drop</a></strong><br/>
+                                Chenyu Li, Oscar Michel, Xichen Pan, Sainan Liu, <strong>Mike Roberts</strong>, Saining Xie<br/>
+                                <em>International Conference on Machine Learning (ICML) 2025</em>
+                            </p>
+                        </td>
+                    </tr>
+
+                    <tr class='thumbnailrow'>
+                        <td class='thumbnailcolumn'>
                             <div>
                                 <a href='papers/hypersim'><img width='200px' src='images/paper_2020_arxiv.jpg' alt='' title=''/></a>
                             </div>
@@ -280,24 +315,47 @@
                 <hr>
 
                 <p class='bigtext'>
-                    <strong>Datasets</strong>
+                    <strong>Software and Datasets</strong>
                 </p>
-                
-                <p>
+
+                <p class='softwaretitle'>
+                    <strong><a href='papers/spear'>SPEAR: A Simulator for Photorealistic Embodied AI Research</a></strong><br/>
+                </p>
+
+                <table class='softwareimage'>
+                    <tr class='thumbnailrow'>
+
+                        <td class='thumbnailcolumn'>
+                            <a href='papers/spear'><img width='875px' src='images/software_spear.jpg' alt='' title=''/></a>
+                        </td>
+
+                    </tr>
+                </table>
+
+                <p class='softwareabstract'>
+                    Interactive simulators have become powerful tools for training embodied agents and generating synthetic visual data, but existing photorealistic simulators suffer from limited generality, programmability, and rendering speed.
+                    We address these limitations by introducing SPEAR: A Simulator for Photorealistic Embodied AI Research.
+                    At its core, SPEAR is a Python library that can connect to, and programmatically control, any Unreal Engine (UE) application via a modular plugin architecture. SPEAR exposes over 14K unique UE functions to Python, representing an order-of-magnitude increase in programmable functionality over existing UE-based simulators.
+                    Additionally, a single SPEAR instance can render 1920x1080 photorealistic beauty images directly into a user's NumPy array at 73 frames per second - an order of magnitude faster than existing UE plugins - while also providing ground truth image modalities that are not available in any existing UE-based simulator (e.g., a non-diffuse intrinsic image decomposition, material IDs, and physically based shading parameters).
+                    Finally, SPEAR introduces an expressive high-level programming model that enables users to specify complex graphs of UE work with arbitrary data dependencies among work items, and to execute these graphs deterministically within a single UE frame.
+                    We demonstrate the utility of SPEAR through a diverse collection of example applications: controlling multiple embodied agents with distinct action spaces (e.g., humans, cars, and robots) across several in-the-wild UE projects; rendering photorealistic city-scale environments; manipulating UE's procedural content generation systems; rendering synchronized multi-view images of detailed human faces; coordinating an interactive co-simulation with the MuJoCo physics simulator; and editing scenes using natural language via an AI coding assistant.
+                </p>
+
+                <p class='softwaretitlespaced'>
                     <strong><a href='papers/hypersim'>Hypersim: A Photorealistic Synthetic Dataset for Holistic Indoor Scene Understanding</a></strong><br/>
                 </p>
 
-                <table>
+                <table class='softwareimage'>
                     <tr class='thumbnailrow'>
 
                         <td class='thumbnailcolumn'>
                             <a href='papers/hypersim'><img width='875px' src='images/software_hypersim.jpg' alt='' title=''/></a>
                         </td>
-                        
+
                     </tr>
                 </table>
 
-                <p>
+                <p class='softwareabstract'>
                     For many fundamental scene understanding tasks, it is difficult or impossible to obtain per-pixel ground truth labels from real images.
                     We address this challenge by introducing Hypersim, a photorealistic synthetic dataset for holistic indoor scene understanding.
                     To create our dataset, we leverage a large repository of synthetic scenes created by professional artists, and we generate 77,400 images of 461 indoor scenes with detailed per-pixel labels and corresponding ground truth geometry.
@@ -307,40 +365,11 @@
                 <hr>
 
                 <p class='bigtext'>
-                    <strong>Software</strong>
+                    <strong>Students</strong>
                 </p>
 
                 <p>
-                    <strong><a href='http://mikeroberts3000.github.io/flashlight'>Flashlight: A Python Library for Analyzing and Solving Quadrotor Control Problems</a></strong><br/>
-                </p>
-
-                <table>
-                    <tr class='thumbnailrow'>
-
-                        <td class='thumbnailcolumn'> 
-                            <a href='http://mikeroberts3000.github.io/flashlight'><img height='150px' src='images/software_flashlight_1.jpg' alt='' title=''/></a>
-                        </td>
-
-                        <td class='thumbnailcolumn'> 
-                            <a href='http://mikeroberts3000.github.io/flashlight'><img height='135px' src='images/software_flashlight_2.jpg' alt='' title=''/></a>
-                        </td>
-
-                        <td class='thumbnailcolumn'>
-                            <a href='http://mikeroberts3000.github.io/flashlight'><img height='100px' src='images/software_flashlight_3.jpg' alt='' title=''/></a>
-                        </td>
-
-                        <td class='thumbnailcolumn'> 
-                            <a href='http://mikeroberts3000.github.io/flashlight'><img height='110px' src='images/software_flashlight_4.jpg' alt='' title=''/></a>
-                        </td>
-                        
-                    </tr>
-                </table>
-
-                <p>
-                    Flashlight is a lightweight Python library for analyzing and solving quadrotor control problems.
-                    Flashlight enables you to easily solve for minimum snap trajectories that go through a sequence of waypoints, compute the required control forces along trajectories, execute the trajectories in a physics simulator, and visualize the simulation results.
-                    Flashlight also makes it easy to simulate external disturbances, and to recover from those disturbances using time-varying LQR feedback control.
-                    Flashlight includes physical models for 2D quadrotors, 3D quadrotors, and 3D quadrotor cameras.
+                    I am fortunate to work with amazing students: <a href='https://habibslim.github.io'>Habib Slim</a> (KAUST)
                 </p>
 
                 <hr>
@@ -351,7 +380,7 @@
 
                 <p>
                     Before going to Stanford, I used to DJ in front of hundreds of people every weekend.
-                    I was a resident at <a href='http://www.therepublik.ca'>The Republik</a> and The Bamboo Tiki Room in Calgary, Canada.
+                    I was a resident at The Republik and The Bamboo Tiki Room in Calgary, Canada.
                     The Republik and the Bamboo were voted the 2nd and 3rd best places to dance in the FFWD Best of Calgary 2010.
                     More recently, I won a national DJing competition to perform at Glowchella 2013 in San Francisco, and I have subsequently opened for <a href='http://en.wikipedia.org/wiki/The_Chainsmokers'>The Chainsmokers</a>, <a href='http://en.wikipedia.org/wiki/Martin_Solveig'>Martin Solveig</a>, and several other notable international artists.
                 </p>

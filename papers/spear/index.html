@@ -1,0 +1,339 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+    <head>
+        <title>SPEAR: A Simulator for Photorealistic Embodied AI Research</title>
+        <meta http-equiv='Content-Style-Type' content='text/css'/>
+        <meta name='robots' content='index,follow'/>
+        <link rel='stylesheet' href='style.css' type='text/css'/>
+    </head>
+    <body>
+
+        <div id='page'>
+            <div id='content'>
+
+                <table class='heading' style='width: 100% !important'>
+                    <tr>
+                        <td>
+                            <p class='bigtext'>
+                                <strong>SPEAR: A Simulator for Photorealistic Embodied AI Research</strong>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+
+                <!--
+                    Author / institution block: every row below shares the same overall
+                    table width (94%), so all rows' left and right edges line up exactly.
+                    Each <td> has its own inline "width" (controls where inner columns fall),
+                    "text-align" (left/center/right - controls which name sits on the left
+                    edge, right edge, or floats in the middle), and "padding-top"/
+                    "padding-bottom" (controls how tall that row is, i.e. the vertical gap
+                    above/below it). Tweak any of these numbers directly to nudge alignment
+                    or spacing.
+                -->
+
+                <table class='heading' style='width: 90% !important; table-layout: fixed; margin-top: 5px;'>
+                    <tr>
+
+                        <td style='width: 20%; text-align: center !important; padding-top: 2px; padding-bottom: 2px;'>
+                            <p>
+                                <a href='http://mikeroberts3000.github.io'>Mike Roberts</a><sup>1,2</sup>
+                            </p>
+                        </td>
+
+                        <td style='width: 20%; text-align: center !important; padding-top: 2px; padding-bottom: 2px;'>
+                            <p>
+                                Renhan Wang<sup>3</sup>
+                            </p>
+                        </td>
+
+                        <td style='width: 20%; text-align: center !important; padding-top: 2px; padding-bottom: 2px;'>
+                            <p>
+                                <a href='https://github.com/RBZ-99'>Rushikesh Zawar</a><sup>4</sup>
+                            </p>
+                        </td>
+
+                        <td style='width: 20%; text-align: center !important; padding-top: 2px; padding-bottom: 2px;'>
+                            <p>
+                                <a href='https://rachithp.github.io'>Rachith Dey-Prakash</a><sup>2</sup>
+                            </p>
+                        </td>
+
+                        <td style='width: 20%; text-align: center !important; padding-top: 2px; padding-bottom: 2px;'>
+                            <p>
+                                <a href='https://quentin-leboutet.github.io'>Quentin Leboutet</a><sup>2</sup>
+                            </p>
+                        </td>
+
+                    </tr>
+                </table>
+
+                <table class='heading' style='width: 74% !important; table-layout: fixed; margin-top: 0; margin-bottom: 0;'>
+                    <tr>
+
+                        <td style='width: 25%; text-align: center !important; padding-top: 2px; padding-bottom: 2px;'>
+                            <p>
+                                <a href='http://www.stephanrichter.org'>Stephan R.&nbsp;Richter</a><sup>2</sup>
+                            </p>
+                        </td>
+
+                        <td style='width: 25%; text-align: center !important; padding-top: 2px; padding-bottom: 2px;'>
+                            <p>
+                                <a href='https://matthias.pw'>Matthias M&uuml;ller</a><sup>2</sup>
+                            </p>
+                        </td>
+
+                        <td style='width: 25%; text-align: center !important; padding-top: 2px; padding-bottom: 2px;'>
+                            <p>
+                                <a href='https://germanros.net'>German Ros</a><sup>5</sup>
+                            </p>
+                        </td>
+
+                        <td style='width: 25%; text-align: center !important; padding-top: 2px; padding-bottom: 2px;'>
+                            <p>
+                                Rui Tang<sup>3</sup>
+                            </p>
+                        </td>
+
+                    </tr>
+                </table>
+
+                <table class='heading' style='width: 90% !important; table-layout: fixed; margin-top: 0;'>
+                    <tr>
+
+                        <td style='width: 25%; text-align: center !important; padding-top: 2px; padding-bottom: 2px;'>
+                            <p>
+                                <a href='https://mrl.ethz.ch'>Stefan Leutenegger</a><sup>6,7</sup>
+                            </p>
+                        </td>
+
+                        <td style='width: 25%; text-align: center !important; padding-top: 2px; padding-bottom: 2px;'>
+                            <p>
+                                <a href='https://yannickhold.com'>Yannick Hold-Geoffroy</a><sup>1</sup>
+                            </p>
+                        </td>
+
+                        <td style='width: 25%; text-align: center !important; padding-top: 2px; padding-bottom: 2px;'>
+                            <p>
+                                <a href='https://www.kalyans.org'>Kalyan Sunkavalli</a><sup>1</sup>
+                            </p>
+                        </td>
+
+                        <td style='width: 25%; text-align: center !important; padding-top: 2px; padding-bottom: 2px;'>
+                            <p>
+                                <a href='https://vladlen.info'>Vladlen Koltun</a><sup>2</sup>
+                            </p>
+                        </td>
+
+                    </tr>
+                </table>
+
+                <table class='heading' style='width: 74% !important; table-layout: fixed; margin-top: 10px; margin-bottom: 0;'>
+                    <tr>
+
+                        <td style='width: 25%; text-align: center !important; padding-top: 2px; padding-bottom: 2px;'>
+                            <p>
+                                <sup>1</sup>Adobe Research
+                            </p>
+                        </td>
+
+                        <td style='width: 25%; text-align: center !important; padding-top: 2px; padding-bottom: 2px;'>
+                            <p>
+                                <sup>2</sup>Intel Labs
+                            </p>
+                        </td>
+
+                        <td style='width: 25%; text-align: center !important; padding-top: 2px; padding-bottom: 2px;'>
+                            <p>
+                                <sup>3</sup>Manycore Tech Inc
+                            </p>
+                        </td>
+
+                        <td style='width: 25%; text-align: center !important; padding-top: 2px; padding-bottom: 2px;'>
+                            <p>
+                                <sup>4</sup>Adobe
+                            </p>
+                        </td>
+
+                    </tr>
+                </table>
+
+                <table class='heading' style='width: 74% !important; table-layout: fixed; margin-bottom: 10px;'>
+                    <tr>
+
+                        <td style='width: 33.33%; text-align: left !important; padding-top: 2px; padding-bottom: 2px;'>
+                            <p>
+                                <sup>5</sup>NVIDIA
+                            </p>
+                        </td>
+
+                        <td style='width: 33.33%; text-align: center !important; padding-top: 2px; padding-bottom: 2px;'>
+                            <p>
+                                <sup>6</sup>ETH Zurich
+                            </p>
+                        </td>
+
+                        <td style='width: 33.33%; text-align: right !important; padding-top: 2px; padding-bottom: 2px;'>
+                            <p>
+                                <sup>7</sup>Imperial College London
+                            </p>
+                        </td>
+
+                    </tr>
+                </table>
+
+                <table class='heading'>
+                    <tr>
+                        <td>
+                            <p>
+                                <em>European Conference on Computer Vision (ECCV) 2026</em>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+
+                <table class='figure'>
+                    <tr>
+                        <td>
+                            <img width='100%' src='images/control_sample_projects_web.jpg' alt='' title='' />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>
+                                <strong>Figure 1:</strong> SPEAR is a Python library that can connect to, and programmatically control, any Unreal Engine (UE) application via a modular plugin architecture. SPEAR exposes over 14K unique UE functions, representing an order-of-magnitude increase in programmable functionality over existing simulators. We demonstrate the flexibility of SPEAR by using it to control 6 distinct embodied agents (each with a different action space) across several Epic Games sample projects: a person and a car from <em>CitySample</em> (top); a flying robot from <em>StackOBot</em> (bottom far left); multiple agents in a resource collecting game called <em>CropoutSample</em> (bottom center left); as well as a person with parkour skills and a quadruped robot from <em>GameAnimationSample</em> (bottom right).
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+
+                <table class='figure'>
+                    <tr>
+                        <td>
+                            <img width='100%' src='images/hypersim_web.jpg' alt='' title='' />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>
+                                <strong>Figure 2:</strong> SPEAR includes a customizable camera sensor that can render 1920x1080 photorealistic beauty images (left) directly into a user's NumPy array at 73 frames per second - an order of magnitude faster than existing UE plugins - while also providing ground truth image modalities that are not available in any existing UE-based simulator. For example, the SPEAR camera sensor can render all of the image modalities in the Hypersim dataset, i.e., depths, surface normals, instance and semantic IDs (right top), and a non-diffuse intrinsic image decomposition (right bottom), as well as material IDs and physically based shading parameters.
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+
+                <table class='figure'>
+                    <tr>
+                        <td>
+                            <img width='100%' src='images/electric_web.jpg' alt='' title='' />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>
+                                <strong>Figure 3:</strong> We demonstrate the flexibility of SPEAR by using it to programmatically manipulate the <em>ElectricDreams</em> sample project from Epic Games. <strong>(a):</strong> We control UE's procedural content generation (PCG) system by translating the main PCG entity in this scene (the rock structure in the center of each image) from left to right. Notice how the rock structure automatically harmonizes with the rest of the scene in a convincing way (e.g., the water adjusts around the rock, logs appear and connect with nearby structures), even when it is being driven by our simple programmatic control. <strong>(b):</strong> We simulate time-of-day changes by controlling the orientation of the scene's sky light.
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+
+                <table class='figure'>
+                    <tr>
+                        <td>
+                            <img width='100%' src='images/metahumans_web.jpg' alt='' title='' />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>
+                                <strong>Figure 4:</strong> We demonstrate the generality of the SPEAR camera sensor by using it to render synchronized multi-view images of a detailed human character in the <em>MetaHumans</em> sample project from Epic Games.
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+
+                <table class='figure'>
+                    <tr>
+                        <td>
+                            <img width='100%' src='images/mujoco_web.jpg' alt='' title='' />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>
+                                <strong>Figure 5:</strong> SPEAR can be used in co-simulation applications with external physics simulators. In this application, we interactively control the MuJoCo physics simulator using the default MuJoCo viewer, e.g., by applying a force to the leftmost chair (red arrow). In real-time as the MuJoCo simulation is running, we query the state of the MuJoCo scene (inset images), and we use SPEAR to update the state of a corresponding UE scene (large images).
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+
+                <table class='figure'>
+                    <tr>
+                        <td>
+                            <img width='100%' src='images/scene_editing_web.jpg' alt='' title='' />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>
+                                <strong>Figure 6:</strong> We demonstrate the flexibility of SPEAR by using it to implement an agentic natural-language scene editing application, where a vision-and-language coding assistant manipulates a UE scene by iteratively writing SPEAR programs in response to user text prompts.
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+
+                <table class='figure'>
+                    <tr>
+                        <td>
+                            <img width='100%' src='images/programming_model_web.jpg' alt='' title='' />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>
+                                <strong>Figure 7:</strong> <strong>(a, b):</strong> We demonstrate several fundamental concepts in the SPEAR programming model with a simple example program that spawns a set of coordinate axes in an indoor environment. In our programming model, graphs of UE work are specified as transactions. In particular, the user specifies a transaction by defining a <code>begin_frame</code> context followed by an <code>end_frame</code> context. Within each context, the user specifies a graph of UE work simply by implementing it as Python code. Any C++ function or variable that is visible to UE's reflection system (e.g., <code>SetActorScale3D</code>, <code>RootComponent</code>) can be accessed as though it was a native Python function or attribute. For improved efficiency, we provide an asynchronous variant for each function in SPEAR (e.g., <code>call_async.K2_GetComponentLocation</code>) that avoids synchronizing with UE. <strong>(c):</strong> It is trivial to expose new C++ functions and variables to UE's reflection system, and therefore to SPEAR, simply by adding a <code>UFUNCTION</code> or <code>UPROPERTY</code> annotation next to the function or variable in any C++ header file.
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+
+                <table class='heading'>
+                    <tr>
+                        <td>
+                            <p>
+                                <strong>arXiv</strong> (coming soon...) | <strong><a href='https://github.com/spear-sim/spear'>Code</a></strong>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+
+                <p>
+                    <strong>Abstract:</strong> Interactive simulators have become powerful tools for training embodied agents and generating synthetic visual data, but existing photorealistic simulators suffer from limited generality, programmability, and rendering speed. We address these limitations by introducing <em>SPEAR: A Simulator for Photorealistic Embodied AI Research</em>. At its core, SPEAR is a Python library that can connect to, and programmatically control, any Unreal Engine (UE) application via a modular plugin architecture. SPEAR exposes over 14K unique UE functions to Python, representing an order-of-magnitude increase in programmable functionality over existing UE-based simulators. Additionally, a single SPEAR instance can render 1920x1080 photorealistic beauty images directly into a user's NumPy array at 73 frames per second - an order of magnitude faster than existing UE plugins - while also providing ground truth image modalities that are not available in any existing UE-based simulator (e.g., a non-diffuse intrinsic image decomposition, material IDs, and physically based shading parameters). Finally, SPEAR introduces an expressive high-level programming model that enables users to specify complex graphs of UE work with arbitrary data dependencies among work items, and to execute these graphs deterministically within a single UE frame. We demonstrate the utility of SPEAR through a diverse collection of example applications: controlling multiple embodied agents with distinct action spaces (e.g., humans, cars, and robots) across several in-the-wild UE projects; rendering photorealistic city-scale environments; manipulating UE's procedural content generation systems; rendering synchronized multi-view images of detailed human faces; coordinating an interactive co-simulation with the MuJoCo physics simulator; and editing scenes using natural language via an AI coding assistant.
+                </p>
+
+                <table class='figure'>
+                    <tr>
+                        <td>
+                            <iframe width="720" height="400" src="https://www.youtube.com/embed/QOUNtFG6Uac" frameborder="0" allowfullscreen></iframe>
+                        </td>
+                    </tr>
+                </table>
+
+<pre id='citation'>@inproceedings{roberts:2026
+    author    = {Mike Roberts AND Renhan Wang AND Rushikesh Zawar AND Rachith Dey-Prakash
+                    AND Quentin Leboutet AND Stephan R.~Richter AND Matthias M{\"u}ller
+                    AND German Ros AND Rui Tang AND Stefan Leutenegger AND Yannick
+                    Hold-Geoffroy AND Kalyan Sunkavalli AND Vladlen Koltun},
+    title     = {{SPEAR}: {A} Simulator for Photorealistic Embodied {AI} Research},
+    booktitle = {ECCV 2026}
+}</pre>
+
+                <p class='newsection'>
+                    <strong>Acknowledgements:</strong> We thank Ahlam Laatiki for creating the default SPEAR apartment scene; Epic Games for making the sample projects that we use throughout this paper available for download; Songyou Peng for his excellent guidance on crafting our rebuttal; and Kevin Blackburn-Matzen, Samarth Brahmbhatt, Marti Ferragut Galtes, and David Hafner for their assistance with early prototyping.
+                </p>
+
+            </div>
+        </div>
+    </body>
+</html>
