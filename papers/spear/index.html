@@ -196,6 +196,28 @@
                 <table class='figure'>
                     <tr>
                         <td>
+                            <iframe width="100%" height="490" src="https://www.youtube.com/embed/QOUNtFG6Uac" frameborder="0" allowfullscreen></iframe>
+                        </td>
+                    </tr>
+                </table>
+
+                <table class='heading'>
+                    <tr>
+                        <td>
+                            <p>
+                                <strong>arXiv</strong> (coming soon...) | <strong><a href='https://github.com/spear-sim/spear'>Code</a></strong>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+
+                <p>
+                    <strong>Abstract:</strong> Interactive simulators have become powerful tools for training embodied agents and generating synthetic visual data, but existing photorealistic simulators suffer from limited generality, programmability, and rendering speed. We address these limitations by introducing <em>SPEAR: A Simulator for Photorealistic Embodied AI Research</em>. At its core, SPEAR is a Python library that can connect to, and programmatically control, any Unreal Engine (UE) application via a modular plugin architecture. SPEAR exposes over 14K unique UE functions to Python, representing an order-of-magnitude increase in programmable functionality over existing UE-based simulators. Additionally, a single SPEAR instance can render 1920x1080 photorealistic beauty images directly into a user's NumPy array at 73 frames per second - an order of magnitude faster than existing UE plugins - while also providing ground truth image modalities that are not available in any existing UE-based simulator (e.g., a non-diffuse intrinsic image decomposition, material IDs, and physically based shading parameters). Finally, SPEAR introduces an expressive high-level programming model that enables users to specify complex graphs of UE work with arbitrary data dependencies among work items, and to execute these graphs deterministically within a single UE frame. We demonstrate the utility of SPEAR through a diverse collection of example applications: controlling multiple embodied agents with distinct action spaces (e.g., humans, cars, and robots) across several in-the-wild UE projects; rendering photorealistic city-scale environments; manipulating UE's procedural content generation systems; rendering synchronized multi-view images of detailed human faces; coordinating an interactive co-simulation with the MuJoCo physics simulator; and editing scenes using natural language via an AI coding assistant.
+                </p>
+
+                <table class='figure'>
+                    <tr>
+                        <td>
                             <img width='100%' src='images/control_sample_projects_web.jpg' alt='' title='' />
                         </td>
                     </tr>
@@ -226,13 +248,13 @@
                 <table class='figure'>
                     <tr>
                         <td>
-                            <img width='100%' src='images/electric_web.jpg' alt='' title='' />
+                            <img width='100%' src='images/programming_model_web.jpg' alt='' title='' />
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <p>
-                                <strong>Figure 3:</strong> We demonstrate the flexibility of SPEAR by using it to programmatically manipulate the <em>ElectricDreams</em> sample project from Epic Games. <strong>(a):</strong> We control UE's procedural content generation (PCG) system by translating the main PCG entity in this scene (the rock structure in the center of each image) from left to right. Notice how the rock structure automatically harmonizes with the rest of the scene in a convincing way (e.g., the water adjusts around the rock, logs appear and connect with nearby structures), even when it is being driven by our simple programmatic control. <strong>(b):</strong> We simulate time-of-day changes by controlling the orientation of the scene's sky light.
+                                <strong>Figure 3:</strong> <strong>(a, b):</strong> We demonstrate several fundamental concepts in the SPEAR programming model with a simple example program that spawns a set of coordinate axes in an indoor environment. In our programming model, graphs of UE work are specified as transactions. In particular, the user specifies a transaction by defining a <code>begin_frame</code> context followed by an <code>end_frame</code> context. Within each context, the user specifies a graph of UE work simply by implementing it as Python code. Any C++ function or variable that is visible to UE's reflection system (e.g., <code>SetActorScale3D</code>, <code>RootComponent</code>) can be accessed as though it was a native Python function or attribute. For improved efficiency, we provide an asynchronous variant for each function in SPEAR (e.g., <code>call_async.K2_GetComponentLocation</code>) that avoids synchronizing with UE. <strong>(c):</strong> It is trivial to expose new C++ functions and variables to UE's reflection system, and therefore to SPEAR, simply by adding a <code>UFUNCTION</code> or <code>UPROPERTY</code> annotation next to the function or variable in any C++ header file.
                             </p>
                         </td>
                     </tr>
@@ -241,13 +263,28 @@
                 <table class='figure'>
                     <tr>
                         <td>
-                            <img width='100%' src='images/metahumans_web.jpg' alt='' title='' />
+                            <img width='100%' src='images/step_functions_web.jpg' alt='' title='' />
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <p>
-                                <strong>Figure 4:</strong> We demonstrate the generality of the SPEAR camera sensor by using it to render synchronized multi-view images of a detailed human character in the <em>MetaHumans</em> sample project from Epic Games.
+                                <strong>Figure 4:</strong> We demonstrate the flexibility of our programming model by using it to implement a variety of synchronization strategies found in existing simulators. For each strategy, we implement a simplified OpenAI Gym <code>step</code> function, which takes an <code>action</code> as input, steps a simulation forward, and returns an <code>observation</code> as output. In our programming model, it is straightforward to implement AirSim's approach for single-stepping, UnrealCV+'s approach for batched commands, Habitat 2.0's approach for double-buffered observations, CARLA's synchronous and asynchronous stepping modes, and co-simulation via an external physics simulator (e.g., MuJoCo) with user-defined sub-stepping.
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+
+                <table class='figure'>
+                    <tr>
+                        <td>
+                            <img width='100%' src='images/electric_web.jpg' alt='' title='' />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>
+                                <strong>Figure 5:</strong> We demonstrate the flexibility of SPEAR by using it to programmatically manipulate the <em>ElectricDreams</em> sample project from Epic Games. <strong>(a):</strong> We control UE's procedural content generation (PCG) system by translating the main PCG entity in this scene (the rock structure in the center of each image) from left to right. Notice how the rock structure automatically harmonizes with the rest of the scene in a convincing way (e.g., the water adjusts around the rock, logs appear and connect with nearby structures), even when it is being driven by our simple programmatic control. <strong>(b):</strong> We simulate time-of-day changes by controlling the orientation of the scene's sky light.
                             </p>
                         </td>
                     </tr>
@@ -262,7 +299,22 @@
                     <tr>
                         <td>
                             <p>
-                                <strong>Figure 5:</strong> SPEAR can be used in co-simulation applications with external physics simulators. In this application, we interactively control the MuJoCo physics simulator using the default MuJoCo viewer, e.g., by applying a force to the leftmost chair (red arrow). In real-time as the MuJoCo simulation is running, we query the state of the MuJoCo scene (inset images), and we use SPEAR to update the state of a corresponding UE scene (large images).
+                                <strong>Figure 6:</strong> SPEAR can be used in co-simulation applications with external physics simulators. In this application, we interactively control the MuJoCo physics simulator using the default MuJoCo viewer, e.g., by applying a force to the leftmost chair (red arrow). In real-time as the MuJoCo simulation is running, we query the state of the MuJoCo scene (inset images), and we use SPEAR to update the state of a corresponding UE scene (large images).
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+
+                <table class='figure'>
+                    <tr>
+                        <td>
+                            <img width='100%' src='images/metahumans_web.jpg' alt='' title='' />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>
+                                <strong>Figure 7:</strong> We demonstrate the generality of the SPEAR camera sensor by using it to render synchronized multi-view images of a detailed human character in the <em>MetaHumans</em> sample project from Epic Games.
                             </p>
                         </td>
                     </tr>
@@ -277,7 +329,7 @@
                     <tr>
                         <td>
                             <p>
-                                <strong>Figure 6:</strong> We demonstrate the flexibility of SPEAR by using it to implement an agentic natural-language scene editing application, where a vision-and-language coding assistant manipulates a UE scene by iteratively writing SPEAR programs in response to user text prompts.
+                                <strong>Figure 8:</strong> We demonstrate the flexibility of SPEAR by using it to implement an agentic natural-language scene editing application, where a vision-and-language coding assistant manipulates a UE scene by iteratively writing SPEAR programs in response to user text prompts.
                             </p>
                         </td>
                     </tr>
@@ -286,36 +338,44 @@
                 <table class='figure'>
                     <tr>
                         <td>
-                            <img width='100%' src='images/programming_model_web.jpg' alt='' title='' />
+                            <img width='100%' src='images/api_comparison_web.jpg' alt='' title='' />
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <p>
-                                <strong>Figure 7:</strong> <strong>(a, b):</strong> We demonstrate several fundamental concepts in the SPEAR programming model with a simple example program that spawns a set of coordinate axes in an indoor environment. In our programming model, graphs of UE work are specified as transactions. In particular, the user specifies a transaction by defining a <code>begin_frame</code> context followed by an <code>end_frame</code> context. Within each context, the user specifies a graph of UE work simply by implementing it as Python code. Any C++ function or variable that is visible to UE's reflection system (e.g., <code>SetActorScale3D</code>, <code>RootComponent</code>) can be accessed as though it was a native Python function or attribute. For improved efficiency, we provide an asynchronous variant for each function in SPEAR (e.g., <code>call_async.K2_GetComponentLocation</code>) that avoids synchronizing with UE. <strong>(c):</strong> It is trivial to expose new C++ functions and variables to UE's reflection system, and therefore to SPEAR, simply by adding a <code>UFUNCTION</code> or <code>UPROPERTY</code> annotation next to the function or variable in any C++ header file.
+                                <strong>Table 1:</strong> Comparison of programmable functionality across UE simulators. We report the number of hand-crafted functions and variables each simulator provides, as well as the number of underlying UE functions and variables it exposes (higher is better). For reference, we also report the total lines of Python and C++ code in each simulator codebase (lower is better). SPEAR provides an order of magnitude more programmable functionality than existing UE-based simulators while maintaining a modest code footprint.
                             </p>
                         </td>
                     </tr>
                 </table>
-
-                <table class='heading'>
-                    <tr>
-                        <td>
-                            <p>
-                                <strong>arXiv</strong> (coming soon...) | <strong><a href='https://github.com/spear-sim/spear'>Code</a></strong>
-                            </p>
-                        </td>
-                    </tr>
-                </table>
-
-                <p>
-                    <strong>Abstract:</strong> Interactive simulators have become powerful tools for training embodied agents and generating synthetic visual data, but existing photorealistic simulators suffer from limited generality, programmability, and rendering speed. We address these limitations by introducing <em>SPEAR: A Simulator for Photorealistic Embodied AI Research</em>. At its core, SPEAR is a Python library that can connect to, and programmatically control, any Unreal Engine (UE) application via a modular plugin architecture. SPEAR exposes over 14K unique UE functions to Python, representing an order-of-magnitude increase in programmable functionality over existing UE-based simulators. Additionally, a single SPEAR instance can render 1920x1080 photorealistic beauty images directly into a user's NumPy array at 73 frames per second - an order of magnitude faster than existing UE plugins - while also providing ground truth image modalities that are not available in any existing UE-based simulator (e.g., a non-diffuse intrinsic image decomposition, material IDs, and physically based shading parameters). Finally, SPEAR introduces an expressive high-level programming model that enables users to specify complex graphs of UE work with arbitrary data dependencies among work items, and to execute these graphs deterministically within a single UE frame. We demonstrate the utility of SPEAR through a diverse collection of example applications: controlling multiple embodied agents with distinct action spaces (e.g., humans, cars, and robots) across several in-the-wild UE projects; rendering photorealistic city-scale environments; manipulating UE's procedural content generation systems; rendering synchronized multi-view images of detailed human faces; coordinating an interactive co-simulation with the MuJoCo physics simulator; and editing scenes using natural language via an AI coding assistant.
-                </p>
 
                 <table class='figure'>
                     <tr>
                         <td>
-                            <iframe width="720" height="400" src="https://www.youtube.com/embed/QOUNtFG6Uac" frameborder="0" allowfullscreen></iframe>
+                            <img width='100%' src='images/ablation_web.jpg' alt='' title='' />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>
+                                <strong>Table 2:</strong> Comparison of rendering performance under various configurations when rendering the image on the right at 1920x1080 resolution. For each configuration, we measure the total end-to-end time required to deliver a rendered image to a user's Python program, and we report frame time (ms) and frames per second (FPS). As baselines, we include a standalone UE executable that does not communicate with Python, a standalone executable that does not communicate with Python but does the extra UE work necessary to do so (e.g., rendering an extra view of the scene to an off-screen buffer), and UnrealCV+. We report the performance of SPEAR with and without asynchronous communication and shared memory, and with different amounts of rendering latency. We find that asynchronous communication and shared memory both improve performance, as does increasing rendering latency, and that SPEAR is 9-21x faster than UnrealCV+ while also supporting more photorealistic rendering.
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+
+                <table class='figure'>
+                    <tr>
+                        <td>
+                            <img width='100%' src='images/other_simulators_web.jpg' alt='' title='' />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>
+                                <strong>Table 3:</strong> Comparison of rendering performance across simulators when rendering the images on the right at 1920x1080 resolution. For each simulator, we measure the total end-to-end time required to deliver a rendered image to a user's Python program, and we report frame time (ms) and frames per second (FPS). We ensure the rendering speed of each simulator is as similar as possible when running as a standalone executable that does not communicate with Python (SPEAR: 89 FPS; CARLA: 90 FPS; AirSim: 93 FPS). Under these conditions, any differences we observe when measuring total end-to-end rendering time are attributable to differences in communication overhead. We find that SPEAR is 12x faster than AirSim, and is 10% faster than CARLA under matched amounts of rendering latency.
+                            </p>
                         </td>
                     </tr>
                 </table>
