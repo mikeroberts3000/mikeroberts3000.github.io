@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <title>Hypersim Frequently Asked Questions</title>
+    <link rel="stylesheet" href="styles.css?v=16">
+  </head>
+  <body>
+    <main>
+      <header class="page-title">
+        <div>
+          <h1>Hypersim Frequently Asked Questions</h1>
+          <p class="page-subtitle">[apple/ml-hypersim] issue archive</p>
+        </div>
+        <p id="archive-summary">Loading archive…</p>
+      </header>
+
+      <section class="controls" aria-label="Issue controls">
+        <label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Search recovered issues and messages" autocomplete="off"></label>
+        <select id="sort" aria-label="Sort order"><option value="newest">Newest first</option><option value="oldest">Oldest first</option><option value="number-desc">Highest number</option><option value="number-asc">Lowest number</option></select>
+      </section>
+
+      <section class="issue-shell">
+        <div class="list-header">
+          <div><button class="summary-filter active" data-state="all"><strong id="visible-count">0</strong> conversations</button><span id="state-summary"></span></div>
+          <div class="header-actions"><button id="expand-all">Expand all</button><button id="collapse-all">Collapse all</button></div>
+        </div>
+        <div id="issue-list" aria-live="polite"></div>
+        <div id="empty" hidden>No recovered conversations match these filters.</div>
+      </section>
+    </main>
+    <script src="issues.js"></script>
+    <script src="viewer.js" defer></script>
+  </body>
+</html>
